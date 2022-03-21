@@ -1,0 +1,102 @@
+import logo from './logo.svg';
+import './App.css';
+import Header from './components/Header';
+import HomeBanner from './components/HomeBanner';
+import HomePage from './pages/HomePage'
+import DetailProductPage from './pages/DetailProductPage'
+import LoginPage from './pages/LoginPage';
+import CategoriesPage from './pages/CategoriesPage';
+import {fillter_food} from './data/data'
+
+
+import {Routes, Route} from 'react-router-dom'
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import { useContext, useEffect, useState } from 'react';
+import { SetIsSignedIn, SetUser, SET_ISSIGNEDIN } from './store/Actions';
+import Contex from './store/Context';
+import user_icon from './imgage/userIcon.jpg'
+import productApi from './api/productApi';
+import axios from 'axios';
+// Configure Firebase.
+const config = {
+  apiKey: 'AIzaSyDAEHARU259_dWmmjVoSUPWf7yKqf70PEY',
+  authDomain: 'food-app-react-b7a63.firebaseapp.com',
+  // ...
+};
+firebase.initializeApp(config);
+
+function App() {
+
+  const {state, depatch} = useContext(Contex)
+  //detructering...
+  const {isSignedIn, user} = state
+  console.log(isSignedIn);
+ console.log(user);
+  // Listen to the Firebase Auth state and set the local state.
+  useEffect(() => {
+  
+    const unregisterAuthObserver = firebase.auth().onAuthStateChanged(u => {
+     
+     
+      if(!u){
+        //user log out, handle
+        console.log('not login');
+        depatch(SetIsSignedIn(false))
+        document.querySelector('.img_account').src = user_icon;
+        //update name user in header
+        const header_userName = document.querySelector('.account_name')
+        header_userName.innerHTML = "Sign In"
+      }
+      else{ 
+        depatch(SetIsSignedIn(true))
+        depatch(SetUser(u))
+        console.log("login");
+        //update name user in header
+        const header_userName = document.querySelector('.account_name')
+        header_userName.innerHTML = u.displayName
+         document.querySelector('.img_account').src = u.photoURL
+       // console.log("login : ", user);
+      }
+
+    });
+
+
+    return () => unregisterAuthObserver(); // Make sure we un-register Firebase observers when the component unmounts.
+  }, []);
+
+
+  return (
+    <div className="App">
+       <Routes>
+                <Route path='/' element={<HomePage />} />
+                <Route path='/login' element={<LoginPage />} />
+                <Route path='/details' element={<DetailProductPage />} />
+                <Route path="category" element={<CategoriesPage />}>
+                   <Route path=":typeFoodID" element={<CategoriesPage />} />
+                    {/* <Route path="best-foods" element={<CategoriesPage />} />
+                    <Route path="drinks" element={<CategoriesPage />} />
+                    <Route path="burgers" element={<CategoriesPage />} />
+                    <Route path="breads" element={<CategoriesPage />} />
+                    <Route path="pizzas" element={<CategoriesPage />} />
+                    <Route path="sandwiches" element={<CategoriesPage />} /> */}
+                </Route>
+                <Route
+                    path="*"
+                    element={
+                        <main style={{ padding: "1rem" }}>
+                        <p>There's nothing here!</p>
+                        </main>
+                    }
+                    />
+               
+
+            </Routes>
+     
+        
+    </div>
+  );
+}
+
+export default App;
