@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/food.app/static/css/main.2755d30b.css",
+    "main.js": "/food.app/static/js/main.26869f7d.js",
+    "static/js/787.5dc0e2a0.chunk.js": "/food.app/static/js/787.5dc0e2a0.chunk.js",
+    "static/media/banner-02.jpg": "/food.app/static/media/banner-02.675b194a3dbc123a75d2.jpg",
+    "static/media/banner-01.jpg": "/food.app/static/media/banner-01.57953e4d86530e35dc5c.jpg",
+    "static/media/banner-03.jpg": "/food.app/static/media/banner-03.5b0810a42d2fc17b735a.jpg",
+    "static/media/home_analysis.jpg": "/food.app/static/media/home_analysis.217f127121e0ef1baa4b.jpg",
+    "static/media/info-img.jpg": "/food.app/static/media/info-img.be8ce5f74a7a1847647f.jpg",
+    "static/media/categoryBg.jpg": "/food.app/static/media/categoryBg.10879cd668cc3e9a1ece.jpg",
+    "static/media/login.svg": "/food.app/static/media/login.a547c0a35a42d9141f314d791d715841.svg",
+    "static/media/item1.jpg": "/food.app/static/media/item1.d92f405adc5c7c259c73.jpg",
+    "static/media/bestsell01.png": "/food.app/static/media/bestsell01.8dd2e21f7fdb7ba624a2.png",
+    "static/media/bestsell02.png": "/food.app/static/media/bestsell02.3cab11b62f78d131a494.png",
+    "static/media/bestsell03.png": "/food.app/static/media/bestsell03.3cab11b62f78d131a494.png",
+    "static/media/review03.jpg": "/food.app/static/media/review03.3fbbdde94d8d42108b05.jpg",
+    "static/media/review02.jpg": "/food.app/static/media/review02.05fc2331a0afa80481a0.jpg",
+    "static/media/review01.jpg": "/food.app/static/media/review01.8b773fe57fb05541c806.jpg",
+    "static/media/order_1.jpg": "/food.app/static/media/order_1.7975394a8240b8ae7646.jpg",
+    "static/media/logo.svg": "/food.app/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/order_2.jpg": "/food.app/static/media/order_2.0d5ff727863055424c14.jpg",
+    "static/media/order_3.jpg": "/food.app/static/media/order_3.070bae010415199ca59f.jpg",
+    "static/media/order_4.jpg": "/food.app/static/media/order_4.d6316948b0cc779ba5a5.jpg",
+    "static/media/arr2.png": "/food.app/static/media/arr2.7a8b4722b8ea44fc5fee.png",
+    "static/media/arr1.png": "/food.app/static/media/arr1.e50b7ddfcb480daa308b.png",
+    "static/media/arr3.png": "/food.app/static/media/arr3.efc3debfe901a164af26.png",
+    "static/media/emty.svg": "/food.app/static/media/emty.f9db28214d5768fc3f13961ad429c5b7.svg",
+    "static/media/pizza.svg": "/food.app/static/media/pizza.42d0ea1b00aba6ef1c4b600ac2c35ca2.svg",
+    "static/media/bread.svg": "/food.app/static/media/bread.3829698fa519970a83418243ad0e7f98.svg",
+    "static/media/burger.svg": "/food.app/static/media/burger.e4646d9cb1f4976ca3ceaf4e470f24bb.svg",
+    "static/media/snadwind.svg": "/food.app/static/media/snadwind.2e9ee917df60441e0125513cf2c06910.svg",
+    "static/media/drinks.svg": "/food.app/static/media/drinks.03dd034b1565f61ae6f850a28c5b7442.svg",
+    "index.html": "/food.app/index.html",
+    "main.2755d30b.css.map": "/food.app/static/css/main.2755d30b.css.map",
+    "main.26869f7d.js.map": "/food.app/static/js/main.26869f7d.js.map",
+    "787.5dc0e2a0.chunk.js.map": "/food.app/static/js/787.5dc0e2a0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2755d30b.css",
+    "static/js/main.26869f7d.js"
+  ]
+}
