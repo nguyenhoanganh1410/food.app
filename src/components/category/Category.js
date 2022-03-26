@@ -132,7 +132,22 @@ const Category = () => {
       }
     };
     fetchProductList();
+
+        //scrool to top
+    const handlOnTop = () =>{
+      window.scrollTo({
+        top: 0, 
+        behavior: 'smooth'
+        /* you can also use 'auto' behaviour
+            in place of 'smooth' */
+      });
+    }
+    handlOnTop();
   }, [url, filter]);
+
+  
+  
+
 
   const handleActiveFilterFood = (idx) => {
     setActiveFilterFood(idx);
@@ -238,6 +253,7 @@ const Category = () => {
         price_gte: 100,
       });
     }
+  
   };
 
   //toast notify

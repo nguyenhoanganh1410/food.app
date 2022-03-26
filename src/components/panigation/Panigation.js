@@ -4,6 +4,17 @@ import './PanigationStyle.scss'
 
 const PanigationButton = ({items, pageNum, handlerChangePage}) =>{
 
+
+   // //scrool to top
+   // const handlOnTop = () =>{
+   //    window.scrollTo({
+   //       top: 0, 
+   //       behavior: 'smooth'
+   //       /* you can also use 'auto' behaviour
+   //          in place of 'smooth' */
+   //    });
+   // }
+   
     //console.log("panigation" + pageNum);
     const hanldNextClick = (e) =>{
         const activeIdx = document.querySelector('.active-btn').textContent
@@ -14,7 +25,7 @@ const PanigationButton = ({items, pageNum, handlerChangePage}) =>{
          else{
             handlerChangePage(+activeIdx)
          }
- 
+         //handlOnTop();
      }
      const hanldPreClick = () =>{
         const activeIdx = document.querySelector('.active-btn').textContent
@@ -25,11 +36,13 @@ const PanigationButton = ({items, pageNum, handlerChangePage}) =>{
          else{
             handlerChangePage(+activeIdx - 2)
          }
+
      }
      const changePage = (idx) =>{
         handlerChangePage(idx)
+       // handlOnTop();
      }
-
+      
 
      const ButtonGroup = () =>{
         const newArr = Array.from( {length: items}, (val, idx) =>{

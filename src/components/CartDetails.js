@@ -7,8 +7,13 @@ import { AiOutlineMinus } from 'react-icons/ai';
 import { HiOutlinePlusSm } from 'react-icons/hi';
 import { RiDeleteBin7Line } from 'react-icons/ri';
 import iteam from '../imgage/item1.jpg'; // gives image path
+import {
+    useParams,
+    useNavigate,
+  } from "react-router-dom";
 const CartDetails = () =>{
     const [showDetails, setShowDetails] = useState(false)
+    const navigate = useNavigate();
 
     const {state, depatch} = useContext(Contex)
     //detructering...
@@ -30,6 +35,10 @@ const CartDetails = () =>{
        const cartOverlay = document.querySelector('.cart_overlay')
        cartOverlay.classList.remove('active_cartOverlay')
        cartDetail.classList.remove('active_cartDetails')
+    }
+
+    const handleCheckOut = () =>{
+        navigate("/checkout");
     }
     return (
         <section className='cart_detail'>
@@ -120,7 +129,9 @@ const CartDetails = () =>{
                         <span className='cart_handle__price'>{`$${totalPrice.toFixed(2)}`}</span>
                     </div>
                     <div className='cart_handle__btns'>
-                            <button className='btn btn_order'><span><HiOutlineShoppingCart /></span>checkout</button>
+                            <button className='btn btn_order'
+                                    onClick={() => handleCheckOut()}
+                            ><span><HiOutlineShoppingCart /></span>checkout</button>
                             <button className='btn btn_order'><span><HiOutlineShoppingCart /></span>buy more</button>
                     </div>
                 </div>

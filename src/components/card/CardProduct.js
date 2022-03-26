@@ -5,19 +5,23 @@ import { IoLocationSharp } from "react-icons/io5";
 
 import './CardProductStyle.scss'
 import {
-  Link,
   useParams,
-  Outlet,
-  useSearchParams,
   useNavigate,
 } from "react-router-dom";
+import { useContext} from "react";
+import Contex from "../../store/Context";
 const CardProduct = ({ dislayItems, item, notify, notifyFavotites }) => {
   const params = useParams();
   const navigate = useNavigate();
+
+   //get url global value
+   const { state, depatch } = useContext(Contex);
+   //detructering...
+   const { url} = state;
   
  //chuyen huong khi click vao tung san pham
   const hanldClickItem = (id) => {
-    navigate(`${params.typeFoodID}/${id}`);
+    navigate(`/${url}/${id}`);
   };
   return (
     <div

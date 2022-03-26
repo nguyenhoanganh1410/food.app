@@ -3,9 +3,13 @@ import logo from '../imgage/logo.svg'
 import user_icon from '../imgage/userIcon.jpg'
 import './Header.scss'
 
+
+
 import { AiOutlineHome } from 'react-icons/ai';
-import { FaRegNewspaper,FaBars } from 'react-icons/fa';
-import { IoStorefrontOutline } from 'react-icons/io5';
+
+import { MdAccountBox } from 'react-icons/md';
+import { FaRegNewspaper,FaBars,FaVoteYea } from 'react-icons/fa';
+import { IoStorefrontOutline,IoLogOutOutline } from 'react-icons/io5';
 import { GiKnifeFork } from 'react-icons/gi';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { BsFillPersonFill } from 'react-icons/bs';
@@ -27,7 +31,7 @@ const Header = () =>{
 
     const {state, depatch} = useContext(Contex)
     //detructering...
-    const {totalProduct, totalPrice, cart, isSignedIn} = state
+    const {totalProduct, totalPrice, cart,user, isSignedIn} = state
 
 
     //add scrool event in DOM
@@ -52,7 +56,18 @@ const Header = () =>{
         }
     }
     window.addEventListener('scroll', handScroll)
-
+    if (user) {
+        //update name user in header
+     
+        const header_userName = document.querySelector(".account_name");
+        header_userName.innerHTML = user.displayName;
+     
+        if(!user.photoURL){
+  
+          document.querySelector(".img_account").src = user.photoURL;
+        
+        }
+      }
     //cleanup function
     return () =>{
         window.removeEventListener('scroll', handScroll)
@@ -148,9 +163,9 @@ const Header = () =>{
                            isSignedIn ? (
                             <div className='account_option'>
                                 <ul>
-                                    <li><span><AiOutlineHome /></span><a>my account</a></li>
-                                    <li><span><AiOutlineHome /></span><a>my wishlist</a></li>
-                                    <li onClick={() => logout()}><span><AiOutlineHome /></span><a>log out</a></li>
+                                    <li><span><MdAccountBox /></span><a>my account</a></li>
+                                    <li><span><FaVoteYea /></span><a>my wishlist</a></li>
+                                    <li onClick={() => logout()}><span><IoLogOutOutline /></span><a>log out</a></li>
                                 </ul>
                              </div>
                            ):
